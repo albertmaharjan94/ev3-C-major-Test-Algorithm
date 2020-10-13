@@ -1,11 +1,23 @@
 from mido import MidiFile
+from ev3dev2.motor import LargeMotor, OUTPUT_A, OUTPUT_B, OUTPUT_C, OUTPUT_D
 import time
 import threading
+
+
+armSpeed = 22.5
+leftArm = -21.5
+rightArm = 21.5
+
+
+portA = LargeMotor(OUTPUT_A)
+portB = LargeMotor(OUTPUT_B)
+portC = LargeMotor(OUTPUT_C)
+portD = LargeMotor(OUTPUT_D)
 
 finish = motorC = motorD = motorE = motorF = motorG = motorA = motorB = motorC2 = False
 
 # test
-# 60 - C, 62 - D, 64 -E, 65 - F, 67 - G, 69 - A, 71 - B, 72 - C2 
+# 60 - C, 62 - D, 64 -E, 65 - F, 67 - G, 69 - A, 71 - B, 72 - C2 n_for_degrees(armSpeed, leftArm)
 
 def activeMotorC():
     flag = 0
