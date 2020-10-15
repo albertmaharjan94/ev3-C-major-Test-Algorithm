@@ -1,4 +1,5 @@
-from mido import MidiFile
+# from mido2 import MidiFile
+from mido2.mido import MidiFile
 import time
 import threading
 
@@ -113,7 +114,7 @@ threading.Thread(target= activeMotorB).start()
 threading.Thread(target= activeMotorC2).start()
 
 
-for msg in MidiFile('presence.mid'):
+for msg in MidiFile('Presence.mid'):
     time.sleep(msg.time)
     if not msg.is_meta:
 
